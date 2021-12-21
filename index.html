@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Test</title>
+    <style>
+        
+        body {
+            background-color: rgb(207, 189, 189);
+        }
+
+        * {
+            box-sizing: border-box;
+        }
+
+        .container {
+            padding: 10px;
+            width: 500px;
+            margin: 0 auto;
+            background-color: #fff;
+            border-radius: 10px;
+        }
+
+        h1 {
+            text-align: center;
+            color: rgb(151, 41, 137);
+            font-family: 'Courier New', Courier, monospace;
+        }
+
+        input {
+            display: block;
+            margin: 5px 0 15px 0;
+            border: 1px solid;
+        }
+        label {
+            font-family: 'Courier New', Courier, monospace;
+            font-weight: 700;
+            margin-bottom: 10px;
+        }
+        button {
+            margin-bottom: 15px;
+            padding: 5px;
+            font-weight: 700;
+            background-color: rgb(141, 180, 129);
+            border: 1px solid rgb(29, 43, 25);
+
+            transition: 0.2s linear;
+        }
+        button:hover {
+            background-color: rgb(88, 128, 77);
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Математическая операция</h1>
+        
+        <form class="form">
+            <label for="value1">Введите первое значение</label>
+            <input id="value1" type="text" name="value">
+
+            <label for="value2">Введите второе значение</label>
+            <input id="value2" type="text" name="value">
+
+            <label for="sign">Введите математический знак (+, -, /, *)</label>
+            <input id="sign" type="text" name="symbol">
+
+            <button>Получить результат</button>
+        </form>
+
+        <label for="result">Итого (округление к ближайшему целому числу)</label>
+        <input id="result" name="result" readonly>
+    </div>
+    <script>
+        
+         document.querySelector('form').addEventListener('submit', event => {
+            event.preventDefault();
+
+            let a = document.getElementById('value1').value;
+            let b = document.getElementById('value2').value;
+            let sign = document.getElementById('sign').value;
+
+            if (isNaN(a)) {
+                alert('Вы ввели неправильное значение. Первое и второе значения должны быть числами.')
+                return
+            }
+            else if (isNaN(b)) {
+                alert('Вы ввели неправильное значение. Первое и второе значения должны быть числами.')
+                return
+            }
+
+            if (!"+-/*%".includes(sign)) {
+                alert('Вы ввели неправильно математический знак.')
+                return
+            }
+            
+            let result =  Math.round(eval(`${a} ${sign} ${b}`));
+
+            document.getElementById('result').value = result;
+        });
+
+    </script>
+</body>
+</html>
