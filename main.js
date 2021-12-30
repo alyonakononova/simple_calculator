@@ -5,14 +5,7 @@ document.querySelector('form').addEventListener('submit', event => {
     let b = document.getElementById('value2').value;
     let sign = document.getElementById('sign').value;
 
-    if (isNaN(a)) {
-        alert('Вы ввели неправильное значение. Первое значение должно быть числом.')
-        return
-    }
-    if (isNaN(b)) {
-        alert('Вы ввели неправильное значение. Второе значение должно быть числом.')
-        return
-    }
+
     if (!["+", "-", "/", "*"].includes(sign)) {
         alert('Вы ввели неправильно математический знак.')
         return
