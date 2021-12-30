@@ -1,0 +1,84 @@
+body {
+  background-color: rgb(207, 189, 189);
+}
+
+* {
+  box-sizing: border-box;
+}
+
+.container {
+  padding: 10px;
+  width: 500px;
+  margin: 0 auto;
+  background-color: #fff;
+  border-radius: 10px;
+  position: static;
+}
+
+h1 {
+  text-align: center;
+  color: rgb(151, 41, 137);
+  font-family: "Courier New", Courier, monospace;
+}
+
+input {
+  display: block;
+  margin: 5px 0 15px 0;
+  border: 1px solid;
+}
+label {
+  font-family: "Courier New", Courier, monospace;
+  font-weight: 700;
+  margin-bottom: 10px;
+}
+button {
+  margin-bottom: 15px;
+  padding: 5px;
+  font-weight: 700;
+  background-color: rgb(141, 180, 129);
+  border: 1px solid rgb(29, 43, 25);
+
+  transition: 0.2s linear;
+}
+button:hover {
+  background-color: rgb(88, 128, 77);
+}
+
+@media (max-width: 1025px) {
+  .container {
+    width: 700px;
+  }
+  label {
+    font-size: 25px;
+  }
+  button {
+    font-size: 20px;
+  }
+}
+
+@media (max-width: 769px) {
+  .container {
+    width: 100%;
+  }
+  input {
+    width: 100%;
+  }
+  label {
+    font-size: 25px;
+  }
+  button {
+    font-size: 20px;
+  }
+}
+
+@media (max-width: 376px) {
+  input {
+    width: 100%;
+  }
+  label {
+    font-size: 20px;
+  }
+  button {
+    font-size: 15px;
+  }
+}
